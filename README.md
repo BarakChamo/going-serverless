@@ -2,6 +2,7 @@
 
 A workshop on reactive architectures, lambdas and "serverless" systems.
 
+<br>
 ## Prerequisites
 
 While many PAAS providers support "lambdas" and "API gateways" under different names, this workshop will focus on AWS's implementation for demonstration purposes. 
@@ -10,6 +11,7 @@ To follow along, you'll require a free [AWS account](https://aws.amazon.com/free
 
 You can review alternative providers for your own projects [here]().
 
+<br>
 ## Following the presentation
 
 You can follow the presentation slides here: [barakchamo.github.io/going-serverless](https://barakchamo.github.io/going-serverless)
