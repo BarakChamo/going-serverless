@@ -1,0 +1,1 @@
+aws lambda invoke --invocation-type Event --function-name handler --payload file://$(pwd)/test output
