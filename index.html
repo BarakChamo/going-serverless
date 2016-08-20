@@ -24,55 +24,197 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<!-- Slide 1 -->
 				<section>
 					<h1>Going <strong>
 						<span class=''>&ldquo;Serverless&rdquo;</span>
 					</strong></h1>
+					<h4>----</h4>
+					<h3>Barak Chamo</h3>
+					<h4>@GoFoolhardy</h4>
 				</section>
 
-				<!-- Slide 2 -->
-				<section>Slide 2</section>
-
-				<!-- Slide 3 -->
-				<section>Slide 3</section>
-
-				<!-- Slide 4 -->
-				<section>Slide 4</section>
-
-				<!-- Slide 5 -->
-				<section>Slide 5</section>
-
-				<!-- Slide 6 -->
-				<section>Slide 6</section>
-
-				<!-- Slide 7 -->
-				<section>Slide 7</section>
-
-				<!-- Slide 8 -->
-				<section>Slide 8</section>
-
-				<!-- Slide 9 -->
-				<section>Slide 9</section>
-
-				<!-- Slide 10 -->
-				<section>Slide 10</section>
-
-				<!-- Slide 11 -->
-				<section>Slide 11</section>
-
-				<!-- Slide 12 -->
-				<section>Slide 12</section>
-
-				<!-- Slide 13 -->
-				<section>Slide 13</section>
-
-				<!-- Slide 14 -->
-				<section>Slide 14</section>
-
-				<!-- Slide 15 -->
 				<section>
-					<strong>Supporting PaaS Platforms</strong>
+					<section>
+						<h2>What do you mean <strong><span class=''>Serverless</span></strong>?</h2>
+					</section>
+
+					<section>
+						<h2>Let's talk about <i>scalability!</i></h2>
+					</section>
+				</section>
+
+
+				<section>
+					<section>
+						<h2>In the early days...</h2>
+					</section>
+
+					<section>
+						<img class="stretch" src="https://upload.wikimedia.org/wikipedia/commons/d/d1/First_Web_Server.jpg">
+					</section>
+
+					<section>
+						<img class="stretch" src="http://www.trygve.com/servers03_400.jpg">
+					</section>
+
+					<section>
+						<h2><strong>WEB SCALE!</strong></h2>
+					</section>
+				</section>
+
+				<section>
+					<img class="stretch plain" src="images/cloud.jpg">
+				</section>
+
+				<section>
+					<h2>Let's talk about the <i>cloud</i></h2>
+				</section>
+
+				<section>
+					<h2>{{server farm}}</h2>
+				</section>
+
+				<section>
+					<i><h3>Pre-shaved Yaks</h3></i>
+				</section>
+
+				<section>
+					<section>
+						<h2><strong>I</strong>aaS</h2>
+						<h3><i>Infrastructure</i></h3>
+					</section>
+					<section>
+						<h2><strong>P</strong>aaS</h2>
+						<h3><i>Platform</i></h3>
+					</section>
+
+					<section>
+						<img src="images/server-room.jpg" alt="" class="stretch">
+					</section>
+
+					<section>
+						<img src="images/dyno-scale.png" alt="" class="stretch">
+					</section>
+
+					<section>
+						<h3>instances...</h3>
+					</section>
+
+					<section>
+						<h3>containers...</h3>
+					</section>
+
+					<section>
+						<h3>queues...</h3>
+					</section>
+
+					<section>
+						{{revise these preceding 3}}
+					</section>
+
+					<section>
+						<h2><strong>A</strong>aaS?</h2>
+						<h3><i>Application</i></h3>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2><span class=''>Maintenance<i><strong>less</strong></i></span>!</h2>
+					</section>
+
+					<section>
+						<p><strong>Serverless</strong> applications utilize (yet another) layer of <strong>PaaS abstraction</strong>, giving up the traditional <strong>"server"</strong> for a <strong>component-based</strong> architecture that focuses on small pieces of functionality.</p>
+					</section>
+				</section>
+
+				<section>
+					<h2>Let's build a <i>serverless</i> app</h2>
+				</section>
+
+				<section>
+					<h3>
+						<p>Complete with:</p>
+						<ul>
+							<li>Backing Service</li>
+							<li>REST API</li>
+							<li>Front-end</li>
+						</ul>
+					</h3>
+				</section>
+
+				<section>
+					<section>
+						<h2>Backing Service</h2>
+					</section>
+
+					<section>
+						<h3>Backing Service</h3>
+
+						<ul>
+							<li><strong>DynamoDB</strong> - key-value store</li>
+							<li><strong>S3</strong> - batch data upload</li>
+							<li><strong>Lambda</strong> - data processing</li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>Step 1</h2>
+						<h4>Create <i>IAM</i> role</h4>
+						<small><h4>Get <i>API key</i> and <i>API secret</i> for your account</h4></small>
+					</section>
+
+					<section>
+						<h2>Step 1</h2>
+						<h4>Create <i>S3</i> upload bucket</h4>
+					</section>
+
+					<section>
+						<h2>Step 2</h2>
+						<h4>Create a <i>DynamoDB</i> store</h4>
+					</section>
+
+					<section>
+						<h2>Step 3</h2>
+						<h4>Create <i>Lambda</i> upload event handler</h4>
+					</section>
+
+					<section>
+						<h2>Let's test it out</h2>
+					</section>
+				</section>
+
+				<section>
+					<h2>RESTful API</h2>
+				</section>
+
+				<section>
+					<h3>RESTful API</h3>
+
+					<ul>
+						<li><strong>DynamoDB</strong> - key-value store</li>
+						<li><strong>Lambda</strong> - API handler</li>
+						<li><strong>API Gateway</strong> - API endpoint</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Front-end</h2>
+				</section>
+
+				<section>
+					<h3>Front-end</h3>
+
+					<ul>
+						<li><strong>S3</strong> - serve static app</li>
+						<li><strong>API Gateway</strong> - API endpoint</li>
+						<li><strong>Lambda</strong> - API handler</li>
+						<li><strong>DynamoDB</strong> - key-value store</li>
+					</ul>
+				</section>
+
+				<section>
+					<strong>Supporting Platforms</strong>
 					<br/><br/>
 					<table>
 						<thead>
