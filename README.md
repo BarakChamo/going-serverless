@@ -159,6 +159,7 @@ To map the request from the API to DynamoDB:
 13. Update the table name and index (i.e. `Todos` and `id-index`)
 15. Save the mapping by clicking `Save`
 
+<br/>
 To map the response from DynamoDB to our API format:
 1. Click `Integration Response`
 2. Expand the `200` row and in it, the `Body Mapping Templates` row
