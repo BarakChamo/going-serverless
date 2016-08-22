@@ -18,6 +18,11 @@ You can follow the presentation slides here: [barakchamo.github.io/going-serverl
 
 
 ## Workshop Steps
+
+In this workshop we'll be creating a functional backend for a `TODO` app, not very exciting but a very good example of API design with serverless technologies.
+
+The workshop steps are:
+
 - [Backing Service](#backing-service)
   1. [Setup Roles and Permissions](#roles-and-permissions)
   2. [Create S3 Bucket](#create-s3-bucket)
@@ -34,6 +39,21 @@ You can follow the presentation slides here: [barakchamo.github.io/going-serverl
 ## Backing Service
 
 ### Roles and Permissions
+
+Let's start by creating an IAM role that will have sufficient permissions to run all services needed for our app:
+
+1. Go to the [IAM console](https://console.aws.amazon.com/iam/home#roles) and click `Create New Role`
+2. Name the role, for example: `todoRole`.
+3. From `AWS Service Roles` choose `AWS Lambda`.
+4. Select the following permissions (they are quite loose but this is just an example)
+  1. AWSLambdaFullAccess
+  2. AmazonS3FullAccess
+  3. AmazonDynamoDBFullAccess
+  4. CloudWatchLogsFullAccess
+  5. AmazonAPIGatewayInvokeFullAccess
+5. You can also skip the permission selection and paste the JSON from the example files in `Inline Policies`.
+6. 
+
 
 ### Create S3 Bucket
 
