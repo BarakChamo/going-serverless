@@ -15,16 +15,16 @@ AWS, or Amazon Web Services, is the Platform-as-a-Service provider of choice for
 
 <table>
 <tr>
-<td><img src="https://raw.githubusercontent.com/BarakChamo/going-serverless/master/images/s3.svg"/></td>
+<td><img src="https://barakchamo.github.io/going-serverless/images/s3.svg"/></td>
 </tr>
 <tr>
-<td><img src="https://raw.githubusercontent.com/BarakChamo/going-serverless/master/images/lambda.svg"/></td>
+<td><img src="https://barakchamo.github.io/going-serverless/images/lambda.svg"/></td>
 </tr>
 <tr>
-<td><img src="https://raw.githubusercontent.com/BarakChamo/going-serverless/master/images/dynamodb.svg"/></td>
+<td><img src="https://barakchamo.github.io/going-serverless/images/dynamodb.svg"/></td>
 </tr>
 <tr>
-<td><img src="https://raw.githubusercontent.com/BarakChamo/going-serverless/master/images/apigateway.svg"/></td>
+<td><img src="https://barakchamo.github.io/going-serverless/images/apigateway.svg"/></td>
 </tr>
 </table>
 
