@@ -174,7 +174,7 @@ To map the response from DynamoDB to our API format:
 
 Now that we can retrieve all items, let's create the indidual `REST` operations
 
-#### Create the `todos/{id}`
+#### Create the `todos/{id}` resource
 
 1. Click `Actions` and `Create Resource`
 2. give the resource a name
@@ -210,7 +210,18 @@ To map the response from DynamoDB to our API format:
 
 #### POST `/{id}`
 
-
+`To be completed`
 
 #### DELETE `/{id}`
 
+`To be completed`
+
+### Deploy API Gateway API
+
+To deploy our newly created API we need to set it to an API stage:
+
+1. Click on `Actions` and `Deploy API`
+2. Select a deployment stage
+3. Name the stage and give it a description
+4. Click `Deploy`
+5. To test the API, click on the url under `Invoke URL`
