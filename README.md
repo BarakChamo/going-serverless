@@ -35,6 +35,7 @@ The workshop steps are:
   2. [Create S3 Bucket](#create-s3-bucket)
   3. [Create DynamoDB Table](#create-dynamo-db-table)
   4. [Create Lambda File Upload Handler](#create-lambda-file-upload-handler)
+  5. [Test S3 and Lambda Configuration](#Test-S3-and-Lambda-Configuration)
 
 - [REST API](#rest-api)
   1. one
