@@ -102,3 +102,5 @@ This Lambda will be called automatically every time a file is uploaded to S3, th
 8. Check `Enable Trigger` and click `Next`
 9. Choose a name for the Lambda, for example `todoBatchUpload`
 10. In the editor, enter the code from the [example Lambda handler](./example/backend/handler.js)
+11. In `Existing Role`, choose the role you created earlier (i.e. `todoRole`)
+12. Click `Next` and `Create Function`
