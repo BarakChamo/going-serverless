@@ -102,6 +102,7 @@ This Lambda will be called automatically every time a file is uploaded to S3, th
 8. Check `Enable Trigger` and click `Next`
 9. Choose a name for the Lambda, for example `todoBatchUpload`
 10. In the editor, enter the code from the [example Lambda handler](./example/backend/handler.js)
+11. Replace the [`DYNAMO_TABLE`](https://github.com/BarakChamo/going-serverless/blob/master/example/backend/handler.js#L12) variable with your chosen table name 
 11. In `Existing Role`, choose the role you created earlier (i.e. `todoRole`)
 12. Click `Next` and `Create Function`
 
@@ -113,4 +114,5 @@ Now that our batch upload pipeline is in place let's test it out.
 2. Go to the [S3 Console](https://console.aws.amazon.com/s3/home) and enter your created bucket
 3. Click `Upload` and upload `todos.csv` to your S3 bucket
 4. If you go to the [DynamoDB console](1. Go to the [DynamoDB console](https://console.aws.amazon.com/dynamodb/home#tables)) and enter your created table, the `Items` tab should contain the newly created items from the CSV file 
+5. Once the todos.csv
 
