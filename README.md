@@ -6,6 +6,9 @@ A workshop on reactive architectures, lambdas and "serverless" systems.
 
 <p><strong>Serverless</strong> applications utilize (yet another) layer of <strong>PaaS abstraction</strong>, giving up the traditional <strong>"server"</strong> for a <strong>component-based</strong> architecture that focuses on small pieces of functionality.</p>
 
+### Application architecture
+<img src="https://github.com/BarakChamo/going-serverless/blob/master/images/schema-grid.png?raw=true" />
+
 <br>
 ## Prerequisites
 
