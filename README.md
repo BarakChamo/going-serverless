@@ -38,11 +38,12 @@ The workshop steps are:
   5. [Test S3 and Lambda Configuration](#test-s3-and-lambda-configuration)
 
 - [REST API](#rest-api)
-  1. [Create API Gateway API](#create-api-gateway-api)
+- 1. [Deploy a Swagger Schema](#deploy-a-swagger-schema)
+  2. [Create API Gateway API](#create-api-gateway-api)
     1. [Create root API `GET`](#create-root-api-get)
     2. [Create Nested API methods](#create-nested-api-methods)
-  2. two
-  3. three
+  3. [Deploy an API](#deploy-an-api)
+  4. [API Gateway Access Control](#api-gateway-access-control)
 
 - [Front-end](#front-end)
 
@@ -132,6 +133,20 @@ That's it, our backing service configuration is now complete, we can upload data
 
 ## REST API
 
+### Deploy a Swagger schema
+
+Swagger is a JSON-based schema for describing APIs. API Gateway accepts Swagger to initialize APIs.
+
+To import the API from a ready-made Swagger file:
+
+1. Download the [example Swagger schema](./example/api/schema/todos-prod-swagger-integrations,authorizers.json)
+2. Find and replace all instances of `{{ARN}}` with your IAM Role's ARN as created in Step 1 of this tutorial
+3. Go to the [API Gateway console](https://console.aws.amazon.com/apigateway/home#/apis/create)
+4. Check `Import From Swagger`
+5. Paste the updated Swagger spec in the editor and click `Import`
+6. Click on `Actions` and `Deploy API`
+7. Done!
+
 ### Create API Gateway API
 
 Now that our data store is set up, let's define out RESTful API endpoints.
@@ -216,7 +231,7 @@ To map the response from DynamoDB to our API format:
 
 `To be completed`
 
-### Deploy API Gateway API
+### Deploy an API
 
 To deploy our newly created API we need to set it to an API stage:
 
@@ -234,7 +249,7 @@ To protect our API from unwanted access we can enable access control using API k
 2. Click on `Actions` and `Create API Key`
 3. Give the key a name and choose `Auto Generate`
 4. Click `Save`
-5. Under `Select API` and `Select Stage` choose the newly created API and Stage
+5. Under `Select API` and `Select Stage` choose the newly created API and Stage to enable the key for them
 6. Click `Add`
 7. To view the API key, click `Show` next to `API Key`
 8. Now re-deploy as per the instructions above
