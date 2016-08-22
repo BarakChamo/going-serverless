@@ -16,63 +16,50 @@ You can review alternative providers for your own projects [here]().
 
 You can follow the presentation slides here: [barakchamo.github.io/going-serverless](https://barakchamo.github.io/going-serverless)
 
-reveal.js comes with a broad range of features including [nested slides](https://github.com/hakimel/reveal.js#markup), [Markdown contents](https://github.com/hakimel/reveal.js#markdown), [PDF export](https://github.com/hakimel/reveal.js#pdf-export), [speaker notes](https://github.com/hakimel/reveal.js#speaker-notes) and a [JavaScript API](https://github.com/hakimel/reveal.js#api). There's also a fully featured visual editor and platform for sharing reveal.js presentations at [slides.com](https://slides.com?ref=github).
 
-## Table of contents
-- [Online Editor](#online-editor)
-- [Instructions](#instructions)
-  - [Markup](#markup)
-  - [Markdown](#markdown)
-  - [Element Attributes](#element-attributes)
-  - [Slide Attributes](#slide-attributes)
-- [Configuration](#configuration)
-- [Presentation Size](#presentation-size)
-- [Dependencies](#dependencies)
-- [Ready Event](#ready-event)
-- [Auto-sliding](#auto-sliding)
-- [Keyboard Bindings](#keyboard-bindings)
-- [Touch Navigation](#touch-navigation)
-- [Lazy Loading](#lazy-loading)
-- [API](#api)
-  - [Slide Changed Event](#slide-changed-event)
-  - [Presentation State](#presentation-state)
-  - [Slide States](#slide-states)
-  - [Slide Backgrounds](#slide-backgrounds)
-  - [Parallax Background](#parallax-background)
-  - [Slide Transitions](#slide-transitions)
-  - [Internal links](#internal-links)
-  - [Fragments](#fragments)
-  - [Fragment events](#fragment-events)
-  - [Code syntax highlighting](#code-syntax-highlighting)
-  - [Slide number](#slide-number)
-  - [Overview mode](#overview-mode)
-  - [Fullscreen mode](#fullscreen-mode)
-  - [Embedded media](#embedded-media)
-  - [Stretching elements](#stretching-elements)
-  - [postMessage API](#postmessage-api)
-- [PDF Export](#pdf-export)
-- [Theming](#theming)
-- [Speaker Notes](#speaker-notes)
-  - [Share and Print Speaker Notes](#share-and-print-speaker-notes)
-  - [Server Side Speaker Notes](#server-side-speaker-notes)
-- [Multiplexing](#multiplexing)
-  - [Master presentation](#master-presentation)
-  - [Client presentation](#client-presentation)
-  - [Socket.io server](#socketio-server)
-- [MathJax](#mathjax)
-- [Installation](#installation)
-  - [Basic setup](#basic-setup)
-  - [Full setup](#full-setup)
-  - [Folder Structure](#folder-structure)
-- [License](#license)
+## Workshop Steps
 
-#### More reading
-- [Changelog](https://github.com/hakimel/reveal.js/releases): Up-to-date version history.
-- [Examples](https://github.com/hakimel/reveal.js/wiki/Example-Presentations): Presentations created with reveal.js, add your own!
-- [Browser Support](https://github.com/hakimel/reveal.js/wiki/Browser-Support): Explanation of browser support and fallbacks.
-- [Plugins](https://github.com/hakimel/reveal.js/wiki/Plugins,-Tools-and-Hardware): A list of plugins that can be used to extend reveal.js.
+In this workshop we'll be creating a functional backend for a `TODO` app, not very exciting but a very good example of API design with serverless technologies.
 
-## Online Editor
+The workshop steps are:
+
+- [Backing Service](#backing-service)
+  1. [Setup Roles and Permissions](#roles-and-permissions)
+  2. [Create S3 Bucket](#create-s3-bucket)
+  3. [Create DynamoDB Table](#create-dynamo-db-table)
+  4. [Create Lambda File Upload Handler](#create-lambda-file-upload-handler)
+
+- [REST API](#rest-api)
+  1. one
+  2. two
+  3. three
+
+- [Front-end](#front-end)
+
+## Backing Service
+
+### Roles and Permissions
+
+Let's start by creating an IAM role that will have sufficient permissions to run all services needed for our app:
+
+1. Go to the [IAM console](https://console.aws.amazon.com/iam/home#roles) and click `Create New Role`
+2. Name the role, for example: `todoRole`.
+3. From `AWS Service Roles` choose `AWS Lambda`.
+4. Select the following permissions (they are quite loose but this is just an example)
+  1. AWSLambdaFullAccess
+  2. AmazonS3FullAccess
+  3. AmazonDynamoDBFullAccess
+  4. CloudWatchLogsFullAccess
+  5. AmazonAPIGatewayInvokeFullAccess
+5. You can also skip the permission selection and paste the JSON from the example files in `Inline Policies`.
+6. 
+
+
+### Create S3 Bucket
+
+### Create Dynamo DB Table
+
+### Create Lambda file upload handler
 
 Presentations are written using HTML or Markdown but there's also an online editor for those of you who prefer a graphical interface. Give it a try at [https://slides.com](https://slides.com?ref=github).
 
