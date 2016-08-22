@@ -38,7 +38,7 @@ The workshop steps are:
   5. [Test S3 and Lambda Configuration](#test-s3-and-lambda-configuration)
 
 - [REST API](#rest-api)
-  1. one
+  1. [Create API Gateway API](#create-api-gateway-api)
   2. two
   3. three
 
@@ -124,3 +124,32 @@ Once the `todos.csv` file has been uploaded to the bucket, you can test the Lamb
 4. Press `Test` or `Save and Test`
 
 
+<br/>
+That's it, our backing service configuration is now complete, we can upload data, it'll be automatically processed and put into our data store. Now let's move on to the API.
+
+
+## REST API
+
+### Create API Gateway API
+
+Now that our data store is set up, let's define out RESTful API endpoints.
+
+1. Go to the [API Gateway console](https://console.aws.amazon.com/apigateway/home#/apis/create)
+2. Check `New API`
+3. Give your API a name, for example: `todos`
+
+### Create API methods
+
+1. Click on `Actions` and `Create Method`
+2. In the dropdown select `GET` and confirm
+3. Select `Show Advanced` and `AWS Service Proxy`
+4. Choose your AWS region
+5. Choose `DynamoDB` in `AWS Service`
+6. In `HTTP Method` choose `POST`
+7. Enter `Scan` in `Action`
+8. In `Execution Role` enter the `ARN` of the role created earlier (i.e. todoRole) available in the `IAM` console.
+9. Confirm the method and click `Integration Request`
+10. Expand `Body Mapping Templates` and click `Add mapping template`
+11. In the input field, enter `application/json` and confirm
+12. In the editor to the right, enter the JSON mapping template from the [example file](./example/api/get-template.json)
+13. Update the table name and index (i.e. `Todos` and `id-index`)
