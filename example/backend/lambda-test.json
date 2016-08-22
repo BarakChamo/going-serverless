@@ -3,8 +3,8 @@
     {
       "s3": {
         "bucket": {
-          "name": "appbatchdata",
-          "arn": "arn:aws:s3:::appbatchdata"
+          "name": "serverlesstodobucket",
+          "arn": "arn:aws:s3:::serverlesstodobucket"
         },
         "object": {
           "key": "todos.csv"

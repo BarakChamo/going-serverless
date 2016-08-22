@@ -17,7 +17,7 @@ function processRow(row) {
   return {
     id: data[0],
     todo: data[1],
-    done: !!data[2]
+    done: data[2] !== '0'
   }
 }
 
@@ -27,9 +27,13 @@ function putItems(items) {
 
   // Promisify DynamoDB's callback
   return new Promise((resolve, reject) => {
+      var req = {}
+
+      req[DYNAMO_TABLE] = puts
+
       // Create a batched DynamoDB put request
       dynamo.batchWrite({
-        RequestItems: { SomeTable: puts }
+        RequestItems: req
       }, (err, data) => err ? reject(err) : resolve(data))
   })
 }
@@ -63,8 +67,14 @@ exports.handler = (event, context, callback) => {
         const requests = ops.map(putItems)
 
         Promise.all(requests)
-          .then(data => context.succeed(data))
-          .catch(error => context.fail(err))
+          .then(data => {
+            console.log(data)
+            context.succeed(data)
+          })
+          .catch(error => {
+            console.log(error)
+            context.fail(err)
+          })
       }
   })
 }
