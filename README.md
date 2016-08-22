@@ -10,6 +10,25 @@ A workshop on reactive architectures, lambdas and "serverless" systems.
 <img src="https://github.com/BarakChamo/going-serverless/blob/master/images/schema-grid.png?raw=true" />
 
 <br>
+## Serverless Apps on AWS Lambda
+AWS, or Amazon Web Services, is the Platform-as-a-Service provider of choice for this workshop. We'll be using the following services and components provided by AWS:
+
+<table>
+<tr>
+<td><img src="https://raw.githubusercontent.com/BarakChamo/going-serverless/master/images/s3.svg"/></td>
+</tr>
+<tr>
+<td><img src="https://raw.githubusercontent.com/BarakChamo/going-serverless/master/images/lambda.svg"/></td>
+</tr>
+<tr>
+<td><img src="https://raw.githubusercontent.com/BarakChamo/going-serverless/master/images/dynamodb.svg"/></td>
+</tr>
+<tr>
+<td><img src="https://raw.githubusercontent.com/BarakChamo/going-serverless/master/images/apigateway.svg"/></td>
+</tr>
+</table>
+
+<br>
 ## Prerequisites
 
 While many PAAS providers support "lambdas" and "API gateways" under different names, this workshop will focus on AWS's implementation for demonstration purposes. We will be using AWS `Lambda`, `API Gateway` and `S3` to build a small serverless API.
