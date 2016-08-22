@@ -51,8 +51,8 @@ Let's start by creating an IAM role that will have sufficient permissions to run
   3. AmazonDynamoDBFullAccess
   4. CloudWatchLogsFullAccess
   5. AmazonAPIGatewayInvokeFullAccess
-5. You can also skip the permission selection and paste the JSON from the example files in `Inline Policies`.
-6. 
+5. You can also skip the permission selection and paste the JSON from [the example file](going-serverless/example/roles/policy.json) in `Inline Policies`.
+6. Go to the `Trust Relationships` tab and click `Edit Trust Relationship`, paste the [example JSON](going-serverless/example/roles/entities.json) in and save.
 
 
 ### Create S3 Bucket
