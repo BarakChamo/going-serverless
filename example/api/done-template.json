@@ -1,0 +1,12 @@
+{
+  "TableName": "Todos",
+  "Key": {
+    "id":{
+      "S":"$input.params('id')"
+    }
+  },
+  "UpdateExpression": "set done = :done",
+  "ExpressionAttributeValues":{
+      ":done":"$input.path('$.done')"
+  },
+}

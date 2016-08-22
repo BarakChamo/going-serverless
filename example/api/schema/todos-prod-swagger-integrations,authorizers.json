@@ -1,0 +1,287 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "2016-08-22T20:52:28Z",
+    "title": "todos"
+  },
+  "host": "irayx6ts7l.execute-api.us-east-1.amazonaws.com",
+  "basePath": "/prod",
+  "schemes": [
+    "https"
+  ],
+  "paths": {
+    "/": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/Empty"
+            }
+          }
+        },
+        "security": [
+          {
+            "api_key": []
+          }
+        ],
+        "x-amazon-apigateway-integration": {
+          "credentials": "{{ARN}}",
+          "responses": {
+            "default": {
+              "statusCode": "200",
+              "responseTemplates": {
+                "application/json": "#set($inputRoot = $input.path('$'))\n{\n    \"todos\": [\n        #foreach($elem in $inputRoot.Items) {\n            \"id\": \"$elem.id.S\",\n            \"todo`\": \"$elem.todo.S\",\n            \"done\": \"$elem.done.BOOL\"\n        }#if($foreach.hasNext),#end\n\t#end\n    ]\n}\n"
+              }
+            }
+          },
+          "requestTemplates": {
+            "application/json": "{\n    \"TableName\": \"Todos\",\n    \"IndexName\": \"id-index\"\n}"
+          },
+          "uri": "arn:aws:apigateway:us-east-1:dynamodb:action/Scan",
+          "passthroughBehavior": "when_no_templates",
+          "httpMethod": "POST",
+          "type": "aws"
+        }
+      },
+      "post": {
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/Empty"
+            }
+          }
+        },
+        "security": [
+          {
+            "api_key": []
+          }
+        ],
+        "x-amazon-apigateway-integration": {
+          "credentials": "{{ARN}}",
+          "responses": {
+            "default": {
+              "statusCode": "200"
+            }
+          },
+          "requestTemplates": {
+            "application/json": "{\n  \"TableName\": \"Todos\",\n  \"Item\": {\n    \"id\": {\n      \"S\": \"$context.requestId\"\n    },\n    \"todo\": {\n      \"S\": \"$input.path('$.todo')\"\n    },\n    \"done\": {\n      \"BOOL\": \"$input.path('$.done')\"\n    }\n  }\n}\n"
+          },
+          "uri": "arn:aws:apigateway:us-east-1:dynamodb:action/PutItem",
+          "passthroughBehavior": "when_no_templates",
+          "httpMethod": "POST",
+          "type": "aws"
+        }
+      }
+    },
+    "/{id}": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/Empty"
+            }
+          }
+        },
+        "security": [
+          {
+            "api_key": []
+          }
+        ],
+        "x-amazon-apigateway-integration": {
+          "credentials": "{{ARN}}",
+          "responses": {
+            "default": {
+              "statusCode": "200",
+              "responseTemplates": {
+                "application/json": "#set($inputRoot = $input.path('$'))\n{\n    \"todos\": [\n        #foreach($elem in $inputRoot.Items) {\n            \"id\": \"$elem.id.S\",\n            \"todo\": \"$elem.todo.S\",\n            \"done\": \"$elem.done.BOOL\"\n        }#if($foreach.hasNext),#end\n\t#end\n    ]\n}\n"
+              }
+            }
+          },
+          "requestTemplates": {
+            "application/json": "{\n    \"TableName\": \"Todos\",\n    \"IndexName\": \"id-index\",\n    \"KeyConditionExpression\": \"id = :v1\",\n    \"ExpressionAttributeValues\": {\n        \":v1\": {\n            \"S\": \"$input.params('id')\"\n        }\n    }\n}"
+          },
+          "uri": "arn:aws:apigateway:us-east-1:dynamodb:action/Query",
+          "passthroughBehavior": "when_no_templates",
+          "httpMethod": "POST",
+          "type": "aws"
+        }
+      },
+      "post": {
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/Empty"
+            }
+          }
+        },
+        "security": [
+          {
+            "api_key": []
+          }
+        ],
+        "x-amazon-apigateway-integration": {
+          "credentials": "{{ARN}}",
+          "responses": {
+            "default": {
+              "statusCode": "200"
+            }
+          },
+          "requestTemplates": {
+            "application/json": "{ \n    \"TableName\": \"Todos\",\n    \"Item\": {\n\t\"id\": {\n        \"S\": \"$context.requestId\"\n    },\n    \"todo\": {\n        \"S\": \"$input.path('$.todo')\"\n    },\n    \"done\": {\n        \"BOOL\": \"$input.path('$.done')\"\n    }\n    }\n}"
+          },
+          "uri": "arn:aws:apigateway:us-east-1:dynamodb:action/PutItem",
+          "passthroughBehavior": "when_no_templates",
+          "httpMethod": "POST",
+          "type": "aws"
+        }
+      },
+      "delete": {
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/Empty"
+            }
+          }
+        },
+        "security": [
+          {
+            "api_key": []
+          }
+        ],
+        "x-amazon-apigateway-integration": {
+          "credentials": "{{ARN}}",
+          "responses": {
+            "default": {
+              "statusCode": "200"
+            }
+          },
+          "requestTemplates": {
+            "application/json": "{\n  \"TableName\": \"Todos\",\n  \"Key\": {\n    \"id\":{\n      \"S\":\"$input.params('id')\"\n    }\n  }\n}"
+          },
+          "uri": "arn:aws:apigateway:us-east-1:dynamodb:action/DeleteItem",
+          "passthroughBehavior": "when_no_templates",
+          "httpMethod": "POST",
+          "type": "aws"
+        }
+      }
+    },
+    "/{id}/done": {
+      "post": {
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/Empty"
+            }
+          }
+        },
+        "security": [
+          {
+            "api_key": []
+          }
+        ],
+        "x-amazon-apigateway-integration": {
+          "credentials": "{{ARN}}",
+          "responses": {
+            "default": {
+              "statusCode": "200"
+            }
+          },
+          "requestTemplates": {
+            "application/json": "{\n  \"TableName\": \"Todos\",\n  \"Key\": {\n    \"id\":{\n      \"S\":\"$input.params('id')\"\n    }\n  },\n  \"UpdateExpression\": \"set done = :done\",\n  \"ExpressionAttributeValues\":{\n      \":done\":$input.path('$.done')\n  },\n}\n"
+          },
+          "uri": "arn:aws:apigateway:us-east-1:dynamodb:action/UpdateItem",
+          "passthroughBehavior": "when_no_templates",
+          "httpMethod": "POST",
+          "type": "aws"
+        }
+      }
+    }
+  },
+  "securityDefinitions": {
+    "api_key": {
+      "type": "apiKey",
+      "name": "x-api-key",
+      "in": "header"
+    }
+  },
+  "definitions": {
+    "Empty": {
+      "type": "object",
+      "title": "Empty Schema"
+    }
+  }
+}
