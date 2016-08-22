@@ -9,14 +9,15 @@ const s3 = new AWS.S3({ apiVersion: '2006-03-01' })
 const dynamo = new AWS.DynamoDB.DocumentClient()
 
 const DYNAMO_MAX_REQS = 25
+const DYNAMO_TABLE = 'Todos' // Replace with your DynamoDB table name
 
 function processRow(row) {
   const data = row.split(',')
 
   return {
     id: data[0],
-    color: data[1],
-    size: +data[2]
+    todo: data[1],
+    done: !!data[2]
   }
 }
 
