@@ -1,0 +1,55 @@
+{
+   "Version": "2012-10-17",
+   "Statement": [
+       {
+           "Sid": "Stmt1471888631000",
+           "Effect": "Allow",
+           "Action": [
+               "dynamodb:*"
+           ],
+           "Resource": [
+               "*"
+           ]
+       },
+       {
+           "Sid": "Stmt1471888652000",
+           "Effect": "Allow",
+           "Action": [
+               "execute-api:*"
+           ],
+           "Resource": [
+               "*"
+           ]
+       },
+       {
+           "Sid": "Stmt1471888660000",
+           "Effect": "Allow",
+           "Action": [
+               "lambda:*"
+           ],
+           "Resource": [
+               "*"
+           ]
+       },
+       {
+           "Sid": "Stmt1471888672000",
+           "Effect": "Allow",
+           "Action": [
+               "s3:*"
+           ],
+           "Resource": [
+               "*"
+           ]
+       },
+       {
+           "Sid": "Stmt1471888696000",
+           "Effect": "Allow",
+           "Action": [
+               "logs:*"
+           ],
+           "Resource": [
+               "*"
+           ]
+       }
+   ]
+}
