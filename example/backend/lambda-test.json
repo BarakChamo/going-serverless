@@ -1,0 +1,15 @@
+{
+  "Records": [
+    {
+      "s3": {
+        "bucket": {
+          "name": "appbatchdata",
+          "arn": "arn:aws:s3:::appbatchdata"
+        },
+        "object": {
+          "key": "todos.csv"
+        }
+      }
+    }
+  ]
+}
