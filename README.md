@@ -238,3 +238,4 @@ To protect our API from unwanted access we can enable access control using API k
 6. Click `Add`
 7. To view the API key, click `Show` next to `API Key`
 8. Now re-deploy as per the instructions above
+9. To access protected endpoints, add the `x-api-key` and set its value to the API Key you created
