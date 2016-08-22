@@ -157,9 +157,11 @@ To map the request from the API to DynamoDB:
 11. In the input field, enter `application/json` and confirm
 12. In the editor to the right, enter the JSON mapping template from the [example file](./example/api/get-template.json)
 13. Update the table name and index (i.e. `Todos` and `id-index`)
+15. Save the mapping by clicking `Save`
 
 To map the response from DynamoDB to our API format:
 1. Click `Integration Response`
 2. Expand the `200` row and in it, the `Body Mapping Templates` row
 3. Click on `application/json`
 4. In the editor to the right, enter the JSON mapping template from the [example file](./example/api/response-mapping)
+5. Save the mapping by clicking `Save`
