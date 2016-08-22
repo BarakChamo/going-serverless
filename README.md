@@ -75,7 +75,7 @@ Create an S3 bucket in which we'll drop the batch update files that will be proc
 
 Next, let's create a DynamoDB table that will serve as the data store for our app.
 
-1. Go to the [DynamoDB console]()
+1. Go to the [DynamoDB console](https://console.aws.amazon.com/dynamodb/home#tables)
 2. Click `Create Table`
 3. Name the table, for example: `Todos`
 4. Set the primary key to `id`
@@ -112,4 +112,5 @@ Now that our batch upload pipeline is in place let's test it out.
 1. Download the [`todos.csv`](./example/data/todos.csv) file to your computer
 2. Go to the [S3 Console](https://console.aws.amazon.com/s3/home) and enter your created bucket
 3. Click `Upload` and upload `todos.csv` to your S3 bucket
+4. If you go to the [DynamoDB console](1. Go to the [DynamoDB console](https://console.aws.amazon.com/dynamodb/home#tables)) and enter your created table, the `Items` tab should contain the newly created items from the CSV file 
 
