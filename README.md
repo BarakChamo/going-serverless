@@ -225,3 +225,16 @@ To deploy our newly created API we need to set it to an API stage:
 3. Name the stage and give it a description
 4. Click `Deploy`
 5. To test the API, click on the url under `Invoke URL`
+
+### API Gateway Access Control
+
+To protect our API from unwanted access we can enable access control using API keys:
+
+1. Click on `API Keys` on the left panel
+2. Click on `Actions` and `Create API Key`
+3. Give the key a name and choose `Auto Generate`
+4. Click `Save`
+5. Under `Select API` and `Select Stage` choose the newly created API and Stage
+6. Click `Add`
+7. To view the API key, click `Show` next to `API Key`
+8. Now re-deploy as per the instructions above
