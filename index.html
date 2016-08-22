@@ -133,14 +133,7 @@
 				</section>
 
 				<section>
-					<h3>
-						<p>Complete with:</p>
-						<ul>
-							<li>Backing Service</li>
-							<li>REST API</li>
-							<li>Front-end</li>
-						</ul>
-					</h3>
+					<img class="stretch" src="images/schema-grid.png" alt="">
 				</section>
 
 				<section>
@@ -159,9 +152,13 @@
 					</section>
 
 					<section>
-						<h2>Step 1</h2>
-						<h4>Create <i>IAM</i> role</h4>
-						<small><h4>Get <i>API key</i> and <i>API secret</i> for your account</h4></small>
+						<h2>Step 0</h2>
+						<h4>Create an <i>IAM</i> role</h4>
+						<small><ul>
+							<li>Grant <i>Lambda</i>, <i>S3</i>, <i>DynamoDB</i> and <i>logging</i> permissions</li>
+							<li>Keep record of created Role's <i>ARN</i></li>
+							<li>Get <i>API key</i> and <i>API secret</i> for your account</li>
+						</ul></small>
 					</section>
 
 					<section>
@@ -172,11 +169,19 @@
 					<section>
 						<h2>Step 2</h2>
 						<h4>Create a <i>DynamoDB</i> store</h4>
+						<small><ul>
+							<li>Create a table with an <i>id</i> index key</li>
+						</ul></small>
 					</section>
 
 					<section>
 						<h2>Step 3</h2>
 						<h4>Create <i>Lambda</i> upload event handler</h4>
+						<small><ul>
+							<li>Assign the created role</li>
+							<li>Set-up an <i>S3</i> trigger</li>
+							<li>Define the handler</li>
+						</ul></small>
 					</section>
 
 					<section>
@@ -185,32 +190,42 @@
 				</section>
 
 				<section>
-					<h2>RESTful API</h2>
+					<section>
+						<h2>RESTful API</h2>
+					</section>
+
+					<section>
+						<h3>RESTful API</h3>
+
+						<ul>
+							<li><strong>DynamoDB</strong> - key-value store</li>
+							<li><strong>Lambda</strong> - API handler</li>
+							<li><strong>API Gateway</strong> - API endpoint</li>
+						</ul>
+					</section>
+				</section>
+
+
+				<section>
+					<section>
+						<h2>Front-end</h2>
+					</section>
+
+					<section>
+						<h3>Front-end</h3>
+
+						<ul>
+							<li><strong>S3</strong> - serve static app</li>
+							<li><strong>API Gateway</strong> - API endpoint</li>
+							<li><strong>Lambda</strong> - API handler</li>
+							<li><strong>DynamoDB</strong> - key-value store</li>
+						</ul>
+					</section>
 				</section>
 
 				<section>
-					<h3>RESTful API</h3>
-
-					<ul>
-						<li><strong>DynamoDB</strong> - key-value store</li>
-						<li><strong>Lambda</strong> - API handler</li>
-						<li><strong>API Gateway</strong> - API endpoint</li>
-					</ul>
-				</section>
-
-				<section>
-					<h2>Front-end</h2>
-				</section>
-
-				<section>
-					<h3>Front-end</h3>
-
-					<ul>
-						<li><strong>S3</strong> - serve static app</li>
-						<li><strong>API Gateway</strong> - API endpoint</li>
-						<li><strong>Lambda</strong> - API handler</li>
-						<li><strong>DynamoDB</strong> - key-value store</li>
-					</ul>
+					<h3>We built a web app!</h3>
+					<h4>without <strong><i>maintaining</i></strong> a <strong><i>server</i></strong></h4>
 				</section>
 
 				<section>
@@ -250,7 +265,47 @@
 					</table>
 				</section>
 
+				<section>
+					<strong>Serverless Frameworks and Tools</strong>
+<br><br>
+					<table>
+						<thead>
+							<th></th>
+							<th>Serverless</th>
+							<th>Zappa</th>
+							<th>Apex</th>
+						</thead>
+						<tbody>
+							<tr>
+								<th>Built with</th>
+								<td>Node</td>
+								<td>Python</td>
+								<td>Node</td>
+							</tr>
+							<tr>
+								<th>Supports</th>
+								<td>Node, Python and Java</td>
+								<td>Python</td>
+								<td>Node, Python, Java, Go</td>
+							</tr>
+							<tr>
+								<th>Deploys to</th>
+								<td>AWS, Azure, Google, IBM</td>
+								<td>AWS</td>
+								<td>AWS</td>
+							</tr>
+							<tr>
 
+							</tr>
+						</tbody>
+					</table>
+				</section>
+
+				<section>
+					<h1>Thanks!</h1>
+					<h3>Barak Chamo</h3>
+					<h4>@GoFoolhardy</h4>
+				</section>
 			</div>
 		</div>
 
