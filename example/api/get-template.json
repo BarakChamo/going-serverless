@@ -1,0 +1,4 @@
+{
+    "TableName": "Todos",
+    "IndexName": "id-index"
+}
