@@ -104,3 +104,12 @@ This Lambda will be called automatically every time a file is uploaded to S3, th
 10. In the editor, enter the code from the [example Lambda handler](./example/backend/handler.js)
 11. In `Existing Role`, choose the role you created earlier (i.e. `todoRole`)
 12. Click `Next` and `Create Function`
+
+### Test S3 and Lambda Configuration
+
+Now that our batch upload pipeline is in place let's test it out.
+
+1. Download the [`todos.csv`](./example/data/todos.csv) file to your computer
+2. Go to the [S3 Console](https://console.aws.amazon.com/s3/home) and enter your created bucket
+3. Click `Upload` and upload `todos.csv` to your S3 bucket
+
