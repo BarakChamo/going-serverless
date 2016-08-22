@@ -1,10 +1,10 @@
 {
-    "TableName": "Todos",
-    "IndexName": "id-index",
-    "KeyConditionExpression": "id = :v1",
-    "ExpressionAttributeValues": {
-        ":v1": {
-            "S": "$input.params('id')"
-        }
+  "TableName": "Todos",
+  "IndexName": "id-index",
+  "KeyConditionExpression": "id = :v1",
+  "ExpressionAttributeValues": {
+    ":v1": {
+      "S": "$input.params('id')"
     }
+  }
 }

@@ -1,0 +1,14 @@
+{
+  "TableName": "Todos",
+  "Item": {
+    "id": {
+      "S": "$context.requestId"
+    },
+    "todo": {
+      "S": "$input.path('$.todo')"
+    },
+    "done": {
+      "BOOL": "$input.path('$.done')"
+    }
+  }
+}

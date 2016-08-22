@@ -3,7 +3,7 @@
     "todos": [
         #foreach($elem in $inputRoot.Items) {
             "id": "$elem.id.S",
-            "todo`": "$elem.todo.S",
+            "todo": "$elem.todo.S",
             "done": "$elem.done.BOOL"
         }#if($foreach.hasNext),#end
 	#end
