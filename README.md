@@ -140,6 +140,10 @@ Now that our data store is set up, let's define out RESTful API endpoints.
 
 ### Create API methods
 
+Now we create the root API `GET` method. API Gateway will contact DynamoDB directly to retrieve the records, no code at all is needed in the process.
+
+To map the request from the API to DynamoDB:
+
 1. Click on `Actions` and `Create Method`
 2. In the dropdown select `GET` and confirm
 3. Select `Show Advanced` and `AWS Service Proxy`
@@ -153,3 +157,9 @@ Now that our data store is set up, let's define out RESTful API endpoints.
 11. In the input field, enter `application/json` and confirm
 12. In the editor to the right, enter the JSON mapping template from the [example file](./example/api/get-template.json)
 13. Update the table name and index (i.e. `Todos` and `id-index`)
+
+To map the response from DynamoDB to our API format:
+1. Click `Integration Response`
+2. Expand the `200` row and in it, the `Body Mapping Templates` row
+3. Click on `application/json`
+4. In the editor to the right, enter the JSON mapping template from the [example file](./example/api/response-mapping)
