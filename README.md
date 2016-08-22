@@ -114,5 +114,12 @@ Now that our batch upload pipeline is in place let's test it out.
 2. Go to the [S3 Console](https://console.aws.amazon.com/s3/home) and enter your created bucket
 3. Click `Upload` and upload `todos.csv` to your S3 bucket
 4. If you go to the [DynamoDB console](1. Go to the [DynamoDB console](https://console.aws.amazon.com/dynamodb/home#tables)) and enter your created table, the `Items` tab should contain the newly created items from the CSV file 
-5. Once the todos.csv
+
+Once the `todos.csv` file has been uploaded to the bucket, you can test the Lambda through the editor:
+
+1. Go to the [Lambda Console](https://console.aws.amazon.com/lambda/home?#/functions) and enter your Lambda 
+2. Click `Actions` and `Configure Test Event`
+3. Paste the contents of the [example test JSON](./example/backend/lambda-test.json)
+4. Press `Test` or `Save and Test`
+
 
