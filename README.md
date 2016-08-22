@@ -35,6 +35,7 @@ The workshop steps are:
   2. [Create S3 Bucket](#create-s3-bucket)
   3. [Create DynamoDB Table](#create-dynamo-db-table)
   4. [Create Lambda File Upload Handler](#create-lambda-file-upload-handler)
+  5. [Test S3 and Lambda Configuration](#test-s3-and-lambda-configuration)
 
 - [REST API](#rest-api)
   1. one
@@ -75,7 +76,7 @@ Create an S3 bucket in which we'll drop the batch update files that will be proc
 
 Next, let's create a DynamoDB table that will serve as the data store for our app.
 
-1. Go to the [DynamoDB console]()
+1. Go to the [DynamoDB console](https://console.aws.amazon.com/dynamodb/home#tables)
 2. Click `Create Table`
 3. Name the table, for example: `Todos`
 4. Set the primary key to `id`
@@ -102,5 +103,24 @@ This Lambda will be called automatically every time a file is uploaded to S3, th
 8. Check `Enable Trigger` and click `Next`
 9. Choose a name for the Lambda, for example `todoBatchUpload`
 10. In the editor, enter the code from the [example Lambda handler](./example/backend/handler.js)
+11. Replace the [`DYNAMO_TABLE`](https://github.com/BarakChamo/going-serverless/blob/master/example/backend/handler.js#L12) variable with your chosen table name 
 11. In `Existing Role`, choose the role you created earlier (i.e. `todoRole`)
 12. Click `Next` and `Create Function`
+
+### Test S3 and Lambda Configuration
+
+Now that our batch upload pipeline is in place let's test it out.
+
+1. Download the [`todos.csv`](./example/data/todos.csv) file to your computer
+2. Go to the [S3 Console](https://console.aws.amazon.com/s3/home) and enter your created bucket
+3. Click `Upload` and upload `todos.csv` to your S3 bucket
+4. If you go to the [DynamoDB console](1. Go to the [DynamoDB console](https://console.aws.amazon.com/dynamodb/home#tables)) and enter your created table, the `Items` tab should contain the newly created items from the CSV file 
+
+Once the `todos.csv` file has been uploaded to the bucket, you can test the Lambda through the editor:
+
+1. Go to the [Lambda Console](https://console.aws.amazon.com/lambda/home?#/functions) and enter your Lambda 
+2. Click `Actions` and `Configure Test Event`
+3. Paste the contents of the [example test JSON](./example/backend/lambda-test.json)
+4. Press `Test` or `Save and Test`
+
+
