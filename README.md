@@ -80,6 +80,25 @@ Next, let's create a DynamoDB table that will serve as the data store for our ap
 3. Name the table, for example: `Todos`
 4. Set the primary key to `id`
 5. Click `Create`
-6. 
+6. Once the table is created,  navigate to the `indexes` tab
+7. Click `Create Index`
+8. Set `primary key` to `id`
+9. Make sure `index name` is `id-index`
+10. Click `Create index`
 
 ### Create Lambda file upload handler
+
+To easily populate our backend with batch data, let's write a `Lambda` function that will be called on CSV uploads to our S3 bucket and `PUT` the records in out DynamoDB table.
+
+This Lambda will be called automatically every time a file is uploaded to S3, things are starting to get serverless!
+
+1. Go to the [Lambda Console](https://console.aws.amazon.com/lambda/home?#/functions)
+2. Click `Create a Lambda Function`
+3. Click `Skip` to skip the blueprints
+4. Click on the dashed square and select S3 to asign an S3 event trigger source
+5. Choose the S3 bucket you created before (i.e. `serverlesstodobucket`)
+6. In `Event Type` choose `Object Created (All)`
+7. In `suffix` enter `csv`, this will guarantee the lambda is only called when CSV files are uploaded
+8. Check `Enable Trigger` and click `Next`
+9. Choose a name for the Lambda, for example `todoBatchUpload`
+10. In the editor, enter the code from the [example Lambda handler](./example/backend/handler.js)
