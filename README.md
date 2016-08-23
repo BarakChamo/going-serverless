@@ -14,18 +14,44 @@ A workshop on reactive architectures, lambdas and "serverless" systems.
 AWS, or Amazon Web Services, is the Platform-as-a-Service provider of choice for this workshop. We'll be using the following services and components provided by AWS:
 
 <table>
+<tbody>
 <tr>
-<td><img src="https://raw.githubusercontent.com/BarakChamo/going-serverless/master/images/s3.svg"/></td>
+<td>
+<img class="stretch" src="https://barakchamo.github.io/going-serverless/images/s3.svg"/>
+</td>
+<td>
+<div><strong>S3</strong></div>
+Cloud storage service
+</td>
 </tr>
 <tr>
-<td><img src="https://raw.githubusercontent.com/BarakChamo/going-serverless/master/images/lambda.svg"/></td>
+<td>
+<img class="stretch" src="https://barakchamo.github.io/going-serverless/images/lambda.svg"/>
+</td>
+<td>
+<div><strong>Lambda</strong></div>
+Event-driven code execution
+</td>
 </tr>
 <tr>
-<td><img src="https://raw.githubusercontent.com/BarakChamo/going-serverless/master/images/dynamodb.svg"/></td>
+<td>
+<img class="stretch" src="https://barakchamo.github.io/going-serverless/images/dynamodb.svg"/>
+</td>
+<td>
+<div><strong>DynamoDB</strong></div>
+NoSQL Key-Value store
+</td>
 </tr>
 <tr>
-<td><img src="https://raw.githubusercontent.com/BarakChamo/going-serverless/master/images/apigateway.svg"/></td>
+<td>
+<img class="stretch" src="https://barakchamo.github.io/going-serverless/images/apigateway.svg"/>
+</td>
+<td>
+<div><strong>API Gateway</strong></div>
+API management service
+</td>
 </tr>
+</tbody>
 </table>
 
 <br>
