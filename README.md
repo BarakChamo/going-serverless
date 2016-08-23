@@ -51,6 +51,15 @@ NoSQL Key-Value store
 API management service
 </td>
 </tr>
+<tr>
+<td>
+<img class="stretch" src="https://barakchamo.github.io/going-serverless/images/iam.svg"/>
+</td>
+<td>
+<div><strong>IAM</strong></div>
+Identity and access management
+</td>
+</tr>
 </tbody>
 </table>
 
