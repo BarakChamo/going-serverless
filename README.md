@@ -4,9 +4,20 @@ A workshop on reactive architectures, lambdas and "serverless" systems.
 
 ## What are serverless applications?
 
-<p><strong>Serverless</strong> applications utilize (yet another) layer of <strong>PaaS abstraction</strong>, giving up the traditional <strong>"server"</strong> for a <strong>component-based</strong> architecture that focuses on small pieces of functionality.</p>
+<p>
+  <strong>Serverless</strong> applications utilize  (yet another) layer of <strong>PaaS abstraction</strong>, opting for service interfaces instead of <strong>"management code"</strong> in a <strong>component-based</strong> architecture that focuses on small pieces of functionality.
+</p>
 
 ### Application architecture
+
+In serverless application, different components of the system (storage, API interfaces, compute functions, databases) are connected using interfaces provided to us by the PaaS vendor.
+
+That means that, for example, when we want to process new files uploaded to storage or respond to network requests we don't have to do so by running our own "management code". Instead, we can define connections between different the different services and instruct them to communicate with each other.
+
+Building an application becomes an exercise in connecting nodes instead of controlling them with code.
+
+See this example of a serverless setup, the different services in play are all connected to each other via configuration. There is no "application" that is listening to changes or updates.
+
 <img src="https://github.com/BarakChamo/going-serverless/blob/master/images/schema-grid.png?raw=true" />
 
 <br>
@@ -160,7 +171,7 @@ This Lambda will be called automatically every time a file is uploaded to S3, th
 8. Check `Enable Trigger` and click `Next`
 9. Choose a name for the Lambda, for example `todoBatchUpload`
 10. In the editor, enter the code from the [example Lambda handler](./example/backend/handler.js)
-11. Replace the [`DYNAMO_TABLE`](https://github.com/BarakChamo/going-serverless/blob/master/example/backend/handler.js#L12) variable with your chosen table name 
+11. Replace the [`DYNAMO_TABLE`](https://github.com/BarakChamo/going-serverless/blob/master/example/backend/handler.js#L12) variable with your chosen table name
 11. In `Existing Role`, choose the role you created earlier (i.e. `todoRole`)
 12. Click `Next` and `Create Function`
 
@@ -171,11 +182,11 @@ Now that our batch upload pipeline is in place let's test it out.
 1. Download the [`todos.csv`](./example/data/todos.csv) file to your computer
 2. Go to the [S3 Console](https://console.aws.amazon.com/s3/home) and enter your created bucket
 3. Click `Upload` and upload `todos.csv` to your S3 bucket
-4. If you go to the [DynamoDB console](1. Go to the [DynamoDB console](https://console.aws.amazon.com/dynamodb/home#tables)) and enter your created table, the `Items` tab should contain the newly created items from the CSV file 
+4. If you go to the [DynamoDB console](1. Go to the [DynamoDB console](https://console.aws.amazon.com/dynamodb/home#tables)) and enter your created table, the `Items` tab should contain the newly created items from the CSV file
 
 Once the `todos.csv` file has been uploaded to the bucket, you can test the Lambda through the editor:
 
-1. Go to the [Lambda Console](https://console.aws.amazon.com/lambda/home?#/functions) and enter your Lambda 
+1. Go to the [Lambda Console](https://console.aws.amazon.com/lambda/home?#/functions) and enter your Lambda
 2. Click `Actions` and `Configure Test Event`
 3. Paste the contents of the [example test JSON](./example/backend/lambda-test.json)
 4. Press `Test` or `Save and Test`
