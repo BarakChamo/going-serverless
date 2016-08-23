@@ -57,7 +57,7 @@ API management service
 </td>
 <td>
 <div><strong>IAM</strong></div>
-Identity management for authentication and authorization
+Identity and access management
 </td>
 </tr>
 </tbody>
