@@ -53,7 +53,7 @@ API management service
 </tr>
 <tr>
 <td>
-<img class="stretch" src="https://barakchamo.github.io/going-serverless/images/apigateway.svg"/>
+<img class="stretch" src="https://barakchamo.github.io/going-serverless/images/iam.svg"/>
 </td>
 <td>
 <div><strong>IAM</strong></div>
