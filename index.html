@@ -12,6 +12,12 @@
 		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
 
+		<style>
+			.reveal table tr td {
+		    vertical-align: middle;
+			}
+		</style>
+
 		<!-- Printing and PDF exports -->
 		<script>
 			var link = document.createElement( 'link' );
@@ -43,7 +49,7 @@
 					</section>
 				</section>
 
-
+<!--
 				<section>
 					<section>
 						<h2>In the early days...</h2>
@@ -60,43 +66,43 @@
 					<section>
 						<h2><strong>WEB SCALE!</strong></h2>
 					</section>
-				</section>
-
+				</section> -->
+<!--
 				<section>
 					<img class="stretch plain" src="images/cloud.jpg">
-				</section>
-
+				</section> -->
+<!--
 				<section>
 					<h2>Let's talk about the <i>cloud</i></h2>
-				</section>
-
+				</section> -->
+<!--
 				<section>
 					<h2>{{server farm}}</h2>
-				</section>
-
+				</section> -->
+<!--
 				<section>
 					<i><h3>Pre-shaved Yaks</h3></i>
-				</section>
+				</section> -->
 
-				<section>
-					<section>
+				<!-- <section> -->
+					<!-- <section>
 						<h2><strong>I</strong>aaS</h2>
 						<h3><i>Infrastructure</i></h3>
 					</section>
 					<section>
 						<h2><strong>P</strong>aaS</h2>
 						<h3><i>Platform</i></h3>
-					</section>
+					</section> -->
 
-					<section>
+					<!-- <section>
 						<img src="images/server-room.jpg" alt="" class="stretch">
 					</section>
 
 					<section>
 						<img src="images/dyno-scale.png" alt="" class="stretch">
-					</section>
+					</section> -->
 
-					<section>
+					<!-- <section>
 						<h3>instances...</h3>
 					</section>
 
@@ -110,13 +116,13 @@
 
 					<section>
 						{{revise these preceding 3}}
-					</section>
+					</section> -->
 
-					<section>
+					<!-- <section>
 						<h2><strong>A</strong>aaS?</h2>
 						<h3><i>Application</i></h3>
 					</section>
-				</section>
+				</section> -->
 
 				<section>
 					<section>
@@ -129,7 +135,52 @@
 				</section>
 
 				<section>
-					<h2>Let's build a <i>serverless</i> app</h2>
+					<section>
+						<h2>Let's build a <i>serverless</i> app</h2>
+					</section>
+
+					<section>
+						<table>
+							<tbody>
+								<tr>
+									<td>
+										<img class="stretch" src="https://barakchamo.github.io/going-serverless/images/s3.svg"/>
+									</td>
+									<td>
+										<div><strong>S3</strong></div>
+										Cloud storage service
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<img class="stretch" src="https://barakchamo.github.io/going-serverless/images/lambda.svg"/>
+									</td>
+									<td>
+										<div><strong>Lambda</strong></div>
+										Event-driven code execution
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<img class="stretch" src="https://barakchamo.github.io/going-serverless/images/dynamodb.svg"/>
+									</td>
+									<td>
+										<div><strong>DynamoDB</strong></div>
+										NoSQL Key-Value store
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<img class="stretch" src="https://barakchamo.github.io/going-serverless/images/apigateway.svg"/>
+									</td>
+									<td>
+										<div><strong>API Gateway</strong></div>
+										API management service
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</section>
 				</section>
 
 				<section>
@@ -203,10 +254,50 @@
 							<li><strong>API Gateway</strong> - API endpoint</li>
 						</ul>
 					</section>
+
+					<section>
+						<h2>Step 1</h2>
+						<h4>Create <i>API Gateway</i> API</h4>
+						<small><ul>
+							<li>Create API Definition</li>
+							<li>Create REST methods</li>
+							<li>Assign Service Proxies</li>
+						</ul></small>
+					</section>
+
+					<section>
+						<h2>Step 2</h2>
+						<h4>Secure the API</h4>
+						<small><ul>
+							<li>Define API Key</li>
+							<li>Assign and enable for API</li>
+							<li>Secure chosen endpoints</li>
+						</ul></small>
+					</section>
+
+					<section>
+						<h2>Step 3</h2>
+						<h4>Deploy the API</h4>
+						<small><ul>
+							<li>Create a deployment stage</li>
+							<li>Deploy the API</li>
+							<li>Test!</li>
+						</ul></small>
+					</section>
+
+					<section>
+						<h2>Step 4</h2>
+						<h4>Deploy full Swagger Schema</h4>
+						<small><ul>
+							<li>Update Swagger JSON schema</li>
+							<li>Create new API from the schema</li>
+							<li>Update API Key assignments</li>
+							<li>Deploy the API</li>
+						</ul></small>
+					</section>
 				</section>
 
-
-				<section>
+				<!-- <section>
 					<section>
 						<h2>Front-end</h2>
 					</section>
@@ -221,7 +312,7 @@
 							<li><strong>DynamoDB</strong> - key-value store</li>
 						</ul>
 					</section>
-				</section>
+				</section> -->
 
 				<section>
 					<h3>We built a web app!</h3>
