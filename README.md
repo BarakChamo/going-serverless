@@ -5,7 +5,7 @@ A workshop on reactive architectures, lambdas and "serverless" systems.
 ## What are serverless applications?
 
 <p>
-  <strong>Serverless</strong> applications utilize  (yet another) layer of <strong>PaaS abstraction</strong>, opting for service interfaces instead of <strong>"management code"</strong> in a <strong>component-based</strong> architecture that focuses on small pieces of functionality.
+  <strong>Serverless</strong> applications utilize  (yet another) layer of <strong>*aaS abstraction</strong>, yielding control of <strong>execution</strong> and opting for service interfaces instead of <strong>"management code"</strong> in a <strong>component-based</strong> architecture that focuses on small pieces of functionality.
 </p>
 
 ### Application architecture

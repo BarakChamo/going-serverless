@@ -16,6 +16,19 @@
 			.reveal table tr td {
 		    vertical-align: middle;
 			}
+
+			.twitter {
+				position: fixed;
+				top: 1em;
+				left: 1em;
+			}
+
+			.reveal .block {
+				font-size: 0.85em;
+				display: inline-block;
+				padding: 0.25em 0.5em;
+				border: 2px solid black;
+			}
 		</style>
 
 		<!-- Printing and PDF exports -->
@@ -56,6 +69,58 @@
 				<section>
 					<section>
 						<h2>What do you mean <strong><span class=''>Serverless</span></strong>?</h2>
+					</section>
+
+					<section>
+						<!-- <section> -->
+
+							<table>
+								<tr>
+									<td>
+										<strong>IaaS</strong>
+										<p><i>Infrastructure</i></p>
+									</td>
+									<td>
+										<div class="block i">Network</div>
+										<div class="block i">Storage</div>
+										<div class="block i">Servers</div>
+										<div class="block i">Virtualization</div>
+									</td>
+								</tr>
+								<tr class="fragment">
+									<td>
+										<strong>PaaS</strong>
+										<p><i>Platform</i></p>
+									</td>
+									<td>
+										<div class="block p">OS</div>
+										<div class="block p">Middleware</div>
+										<div class="block p">Runtime</div>
+										<div class="block p">Services</div>
+									</td>
+								</tr>
+								<tr class="fragment">
+									<td>
+										<strong>AaaS?</strong>
+										<p><i>Application</i></p>
+									</td>
+									<td>
+										<div class="block a">Auth</div>
+										<div class="block a">Routing</div>
+										<div class="block a">Execution</div>
+										<div class="block a">More Magic!</div>
+									</td>
+								</tr>
+							</table>
+						<!-- </section> -->
+						<!-- <section>
+							<h2><strong>I</strong>aaS</h2>
+							<h3><i>Infrastructure</i></h3>
+						</section>
+						<section>
+							<h2><strong>P</strong>aaS</h2>
+							<h3><i>Platform</i></h3>
+						</section> -->
 					</section>
 
 					<section>
@@ -143,7 +208,7 @@
 
 					<section>
 						<p>
-							<strong>Serverless</strong> applications utilize  (yet another) layer of <strong>PaaS abstraction</strong>, opting for service interfaces instead of <strong>"management code"</strong> in a <strong>component-based</strong> architecture that focuses on small pieces of functionality.
+							<strong>Serverless</strong> applications utilize  (yet another) layer of <strong>*aaS abstraction</strong>, yielding control of <strong>execution</strong> and opting for service interfaces instead of <strong>"management code"</strong> in a <strong>component-based</strong> architecture that focuses on small pieces of functionality.
 						</p>
 					</section>
 				</section>
@@ -208,11 +273,11 @@
 
 				<section>
 					<section>
-						<h2>Backing Service</h2>
+						<h2>Data & Backend</h2>
 					</section>
 
 					<section>
-						<h3>Backing Service</h3>
+						<h3>Data & Backend</h3>
 
 						<ul>
 							<li><strong>DynamoDB</strong> - key-value store</li>
@@ -340,7 +405,7 @@
 					</section>
 
 					<section>
-						<p>Relying on <strong>interfaces</strong> instead of <strong>management code</strong> eliminates <strong>bottlenecks</strong> reduces <strong>maintenance</strong> and abstracts <strong>scaling concerns</strong></p>
+						<p>Relying on <strong>interfaces</strong> instead of <strong>management code</strong> eliminates <strong>bottlenecks</strong> reduces <strong>maintenance</strong> and abstracts <u>some</u> <strong>scaling concerns</strong></p>
 					</section>
 				</section>
 
