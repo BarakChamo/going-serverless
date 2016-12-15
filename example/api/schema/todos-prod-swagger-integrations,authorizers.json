@@ -32,7 +32,7 @@
           }
         ],
         "x-amazon-apigateway-integration": {
-          "credentials": "{{ARN}}",
+          "credentials": "arn:aws:iam::998397809085:role/lambdaRole",
           "responses": {
             "default": {
               "statusCode": "200",
@@ -71,7 +71,7 @@
           }
         ],
         "x-amazon-apigateway-integration": {
-          "credentials": "{{ARN}}",
+          "credentials": "arn:aws:iam::998397809085:role/lambdaRole",
           "responses": {
             "default": {
               "statusCode": "200"
@@ -117,7 +117,7 @@
           }
         ],
         "x-amazon-apigateway-integration": {
-          "credentials": "{{ARN}}",
+          "credentials": "arn:aws:iam::998397809085:role/lambdaRole",
           "responses": {
             "default": {
               "statusCode": "200",
@@ -164,7 +164,7 @@
           }
         ],
         "x-amazon-apigateway-integration": {
-          "credentials": "{{ARN}}",
+          "credentials": "arn:aws:iam::998397809085:role/lambdaRole",
           "responses": {
             "default": {
               "statusCode": "200"
@@ -208,7 +208,7 @@
           }
         ],
         "x-amazon-apigateway-integration": {
-          "credentials": "{{ARN}}",
+          "credentials": "arn:aws:iam::998397809085:role/lambdaRole",
           "responses": {
             "default": {
               "statusCode": "200"
@@ -254,7 +254,7 @@
           }
         ],
         "x-amazon-apigateway-integration": {
-          "credentials": "{{ARN}}",
+          "credentials": "arn:aws:iam::998397809085:role/lambdaRole",
           "responses": {
             "default": {
               "statusCode": "200"
